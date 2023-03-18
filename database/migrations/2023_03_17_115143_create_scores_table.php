@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('answer_id')->constrained();
+            $table->integer('best_score');
+            $table->string('best_category');
             $table->timestamps();
         });
     }
