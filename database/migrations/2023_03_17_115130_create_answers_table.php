@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('question_id')->constrained();
+            $table->foreignId('question_choice_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->integer('score');
+            $table->string('category');
             $table->timestamps();
         });
     }
