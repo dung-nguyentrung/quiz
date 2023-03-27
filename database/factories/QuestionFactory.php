@@ -21,6 +21,7 @@ class QuestionFactory extends Factory
         return [
             'category_id' => $category->id,
             'question' => $this->faker->name(),
+            'question_number' => $this->faker->numberBetween(1, 20),
             'is_active' => true,
         ];
     }
